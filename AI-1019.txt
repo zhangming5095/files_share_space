@@ -35,4 +35,18 @@ z = y.asnumpy()
 1.方差 s=[(x1-x)^2 +(x2-x)^2 +.(xn-x)^2]/n 　　(x为平均数) 
 2.标准差=方差的算术平方根
 
+
+【矩阵函数】
+ndarray.ones((3,4))	# 3行4列,都是1
+nd.random_normal(0, 1, shape=(3, 4))	# 3行4列,服从,均值为0,方差为1,的正态分布
+nd.dot(a, b.T)		# 矩阵乘法,	b.T : b的转置
+nd.zeros_like(x)	# 全为0, 形状像 x
+nd.arange(3)		# 取0到2,一行
+nd.reshape((3, 1))	# 重新塑形,三行一列
+nd.attach_grad()	# 要求系统申请对应的空间
+nd.record()		# 显式的要求 MXNet 记录我们需要求导的程序
+nd.sum(a)		# 矩阵a 的所有值的和,结果是一个 1X1 矩阵
+nd.norm(a)		# 矩阵a 的所有值的平方和 的算术平方根,结果是一个 1X1 矩阵
+nd.asscalar()		# 返回标量
+
 

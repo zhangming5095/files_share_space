@@ -1,0 +1,27 @@
+课外推荐:
+李沐 ,每周六上午十点 ,斗鱼直播;
+李沐 微博;
+编程猫 APP;
+
+动手能力才是核心竞争力;
+
+金总总结:
+1,算法:了解算法用来干什么;选择合适算法;
+2,调参:每一类算法的经典模型,学会如何调参;初步调参,收敛逼近;
+3,收敛:合理收敛,在成本和精度达到合理平衡;收敛快,消耗高;收敛过快,可能损失特征;
+
+语言选型:python
+框架:MXNet,Tensorflow
+
+conda config --prepend channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+jupyter notebook
+
+# ndarray 和 numpy 互换
+from mxnet import ndarray as nd
+import numpy as np
+x = np.ones((2,3))
+y = nd.array(x)	
+z = y.asnumpy()
+
+

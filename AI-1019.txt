@@ -1,28 +1,38 @@
 
-�����Ƽ�:
-���� ,ÿ��������ʮ�� ,����ֱ��;
-���� ΢��;
-���è APP;
+课外推荐:
+李沐 ,每周六上午十点 ,斗鱼直播;
+李沐 微博;
+编程猫 APP;
 
-�����������Ǻ��ľ�����;
+动手能力才是核心竞争力;
 
-�����ܽ�:
-1,�㷨:�˽��㷨������ʲô;ѡ������㷨;
-2,����:ÿһ���㷨�ľ���ģ��,ѧ����ε���;��������,�����ƽ�;
-3,����:��������,�ڳɱ��;��ȴﵽ����ƽ��;������,���ĸ�;��������,������ʧ����;
+金总总结:
+1,算法:了解算法用来干什么;选择合适算法;
+2,调参:每一类算法的经典模型,学会如何调参;初步调参,收敛逼近;
+3,收敛:合理收敛,在成本和精度达到合理平衡;收敛快,消耗高;收敛过快,可能损失特征;
 
-����ѡ��:python
-���:MXNet,Tensorflow
+语言选型:python
+框架:MXNet,Tensorflow
+
+【NDArray 和 NumPy】
+对于机器学习来说，处理数据往往是万事之开头。它包含两个部分：数据读取和当数据已经在内存
+⾥时如何处理。本章将关注后者。我们⾸先介绍 NDArray，这是 MXNet 储存和变换数据的主要⼯
+具。如果你之前⽤过 NumPy，你会发现 NDArray 和 NumPy 的多维数组⾮常类似。当然，NDArray
+提供更多的功能，⾸先是 CPU 和 GPU 的异步计算，其次是⾃动求导。这两点使得 NDArray 能
+更好地⽀持机器学习。
 
 conda config --prepend channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 
 jupyter notebook
 
-# ndarray �� numpy ����
+# ndarray 和 numpy 互换
 from mxnet import ndarray as nd
 import numpy as np
 x = np.ones((2,3))
 y = nd.array(x)	
 z = y.asnumpy()
+
+1.方差 s=[(x1-x)^2 +(x2-x)^2 +.(xn-x)^2]/n 　　(x为平均数) 
+2.标准差=方差的算术平方根
 
 

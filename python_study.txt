@@ -48,3 +48,158 @@ while count < 5:
     count = count + 1
 else:
     print count, " is not less than 5"
+
+【列表】
+列表是最常用的Python数据类型，它可以作为一个方括号内的逗号分隔值出现。
+列表的数据项不需要具有相同的类型
+创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可
+list1 = ['Google', 'Runoob', 1997, 2000];
+list2 = [1, 2, 3, 4, 5 ];
+list3 = ["a", "b", "c", "d"];
+
+list1[0]:  Google	#取值
+list2[1:5]:  [2, 3, 4, 5]	#新列表	
+list[2] = 2001	# 修改元素
+del list2[2]	#删除元素
+
+list1 = [i for i in range(5)]
+print(list1[::2])   # list[begin: end: span]
+
+list2 = [[i for i in range(3)] for j in range(2)]
+print(list2)    # 嵌套
+
+a = [1, 2, 3]
+b = a	#地址引用
+c = a[:]	#开辟新地址,内容复制
+d = copy.copy(a) 	#开辟新地址,内容复制
+a[0] = 100
+print(a, b, c)		: [100, 2, 3] [100, 2, 3] [1, 2, 3]
+print(id(a), id(b), id(c))	: 2888234625736 2888234625736 2888234625672
+
+列表函数&方法
+len(list)		列表元素个数
+max(list)		返回列表中元素最大值。
+min(list)		返回列表中元素最小值。
+list(seq)		将元组转换为列表。
+
+list.append(obj)	在列表末尾添加新的对象
+list.count(obj)	统计某个元素在列表中出现的次数
+list.extend(seq)	在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+list.index(obj)	从列表中找出某个值第一个匹配项的索引位置
+list.insert(index, obj)	将对象插入列表
+list.pop(obj=list[-1])		移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+list.remove(obj)		移除列表中某个值的第一个匹配项
+list.reverse()	反向列表中元素
+list.sort([func])	对原列表进行排序
+list.clear()		清空列表
+list.copy()		复制列表
+
+【元组】
+Python 的元组与列表类似，不同之处在于元组的元素不能修改。
+元组使用小括号，列表使用方括号。
+元组创建很简单，只需要在括号中添加元素，并使用逗号隔开即可。
+tup1 = ('Google', 'Runoob', 1997, 2000);
+tup2 = (1, 2, 3, 4, 5 );
+tup3 = "a", "b", "c", "d";
+
+tup1 = (50,)	# 元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用
+
+元组与字符串类似，下标索引从0开始，可以进行截取，组合等
+a = tup1[0]
+b = tup1[1:2]
+print(type(a), type(b))	: <class 'str'> <class 'tuple'>
+
+元组中的元素值是不允许修改的，但我们可以对元组进行连接组合
+c = tup1 + tup2
+print(type(c), c)	: <class 'tuple'> ('Google', 'Runoob', 1997, 2000, 1, 2, 3, 4, 5)
+
+元组中的元素值是不允许删除的，但我们可以使用del语句来删除整个元组
+del tup1
+print(tup1)	: 报错 NameError: name 'tup1' is not defined
+
+元组运算符
+与字符串一样，元组之间可以使用 + 号和 * 号进行运算。这就意味着他们可以组合和复制，运算后会生成一个新的元组。
+len((1, 2, 3))		3			计算元素个数
+(1, 2, 3) + (4, 5, 6)		(1, 2, 3, 4, 5, 6)		连接
+('Hi!',) * 4			('Hi!', 'Hi!', 'Hi!', 'Hi!')	复制
+3 in (1, 2, 3)		True			元素是否存在
+for x in (1, 2, 3): print x,	1 2 3			迭代
+
+元组内置函数
+len(tuple)		计算元组元素个数。
+max(tuple)	返回元组中元素最大值。
+min(tuple)	返回元组中元素最小值。
+tuple(seq)	将列表转换为元组。
+
+
+【字典】
+字典是另一种可变容器模型，且可存储任意类型对象。
+字典的每个键值(key=>value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中 ,格式如下所示
+d = {key1 : value1, key2 : value2 }
+键必须是唯一的，但值则不必。
+值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。
+dict1 = { 'abc': 456 };
+dict2 = { 'abc': 123, 98.6: 37 };
+dict = {'Name': 'Runoob', 'Age': 7, 'Class': 'First'}
+dict['Name']:  Runoob
+dict['Age']:  7
+如果用字典里没有的键访问数据，会输出错误如下
+dict['Alice']	: KeyError: 'Alice'
+
+修改字典
+向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例
+dict['Age'] = 8;               	# 更新 Age
+dict['School'] = "菜鸟教程"  	# 添加信息
+
+删除字典元素
+del dict['Name'] 	# 删除键 'Name'
+dict.clear()     	# 删除字典
+del dict         	# 删除字典
+
+字典键的特性
+字典值可以是任何的 python 对象，既可以是标准的对象，也可以是用户定义的，但键不行。
+两个重要的点需要记住:
+1）不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住
+2）键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行
+
+字典内置函数&方法
+len(dict)		计算字典元素个数，即键的总数。
+
+Python字典包含了以下内置方法：
+radiansdict.clear()		删除字典内所有元素
+radiansdict.copy()		返回一个字典的浅复制
+radiansdict.fromkeys()	创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
+e = dict.fromkeys([1, 2], [2, 4, 6])
+print(e)	{1: [2, 4, 6], 2: [2, 4, 6]}
+
+radiansdict.get(key, default=None)	返回指定键的值，如果值不在字典中返回default值
+key in dict		如果键在字典dict里返回true，否则返回false
+radiansdict.items()		以列表返回可遍历的(键, 值) 元组数组
+b = dict2.items()
+print(type(b), b)	: <class 'dict_items'> dict_items([('abc', 123), (98.6, 37)])
+
+radiansdict.keys()		以列表返回一个字典所有的键
+radiansdict.values()		以列表返回字典中的所有值
+radiansdict.setdefault(key, default=None)	和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
+dict2.setdefault(1, 2)
+print(dict2)	: {'abc': 123, 98.6: 37, 1: 2}
+
+radiansdict.update(dict2)	把字典dict2的键/值对更新到dict里
+pop(key[,default])		删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
+popitem()		随机返回并删除字典中的一对键和值(一般删除末尾对)。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

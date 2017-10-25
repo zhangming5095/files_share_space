@@ -55,10 +55,6 @@ nd.asscalar()		# 返回标量
 # 减小内存开销,避免 为 x+y 创建了临时空间，然后再赋值制到 z
 nd.elemwise_add(x, y, out=z)
 
-# 注意以下区别
-x = nd.random_normal(shape=(2, 3))
-print(x, x[:, 2], x[:2])
-
 
 
 
